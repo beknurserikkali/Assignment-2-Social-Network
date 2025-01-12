@@ -1,0 +1,39 @@
+package base;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+class SocialNetwork {
+    private List<Profile> profiles;
+    private List<Post> posts;
+
+    public SocialNetwork() {
+        profiles = new ArrayList<>();
+        posts = new ArrayList<>();
+    }
+
+    public void addProfile(Profile profile) {
+        profiles.add(profile);
+    }
+
+    public void addPost(Post post) {
+        posts.add(post);
+    }
+
+    public List<Post> getAllPosts() {
+        return new ArrayList<>(posts);
+    }
+
+    public List<Post> getPostsByUser(String username) {
+        return posts.stream()
+                .filter(post -> post.getUsername().equals(username))
+                .collect(Collectors.toList());
+    }
+
+    public Profile findProfileByUsername(String username) {
+        return profiles.stream()
+                .filter(profile -> profile.getUsername().equals(username))
+                .findFirst()
+                .orElse(null);
+    }
+}
