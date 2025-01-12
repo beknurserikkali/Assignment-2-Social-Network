@@ -1,0 +1,19 @@
+package base;
+
+class Post2 extends Post {
+    private String username;
+    private String content;
+    public Post2(String username, String content) {
+        super(username, content);
+        this.username = username;
+        this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "Post2{" +
+                "username='" + username + '\'' +
+                ", content='" + content + '\'' +
+                '}';
+    }
+}
