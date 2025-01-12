@@ -1,0 +1,16 @@
+package base;
+
+class Profile1 extends Profile {
+    public Profile1(String username, String name, String email) {
+        super(username, name, email);
+    }
+
+    @Override
+    public String toString() {
+        return "Profile1{" +
+                "username='" + getUsername() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", email='" + getEmail() + '\'' +
+                '}';
+    }
+}
