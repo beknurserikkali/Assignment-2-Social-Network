@@ -1,0 +1,51 @@
+package base;
+
+import java.util.*;
+
+class Profile {
+    private String username;
+    private String name;
+    private String email;
+
+    public Profile(String username, String name, String email) {
+        this.username = username;
+        this.name = name;
+        this.email = email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public String toString() {
+        return "Profile{" +
+                "username='" + username + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Profile profile = (Profile) o;
+        return Objects.equals(username, profile.username) &&
+                Objects.equals(name, profile.name) &&
+                Objects.equals(email, profile.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, name, email);
+    }
+}
